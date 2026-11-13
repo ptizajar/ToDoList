@@ -1,75 +1,101 @@
-# React + TypeScript + Vite
+# To-Do List — Список задач
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простое и адаптивное веб-приложение для управления повседневными задачами. Разработано на React и TypeScript.
 
-Currently, two official plugins are available:
+## Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Добавление новых задач
+- Отметка задач как выполненных и возможность вернуть их в активные
+- Удаление задач
+- Фильтрация по статусу: все, активные, выполненные
+- Счётчик выполненных задач
+- Автоматическое сохранение задач в Local Storage
+- Восстановление задач после перезагрузки страницы
+- Плавная анимация появления и исчезновения задач
+- Адаптивный интерфейс для мобильных устройств и компьютеров
 
-## React Compiler
+## Используемые технологии
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** — создание пользовательского интерфейса
+- **TypeScript** — типизация и повышение надёжности кода
+- **Vite** — сборка и запуск проекта
+- **CSS Modules** — изолированная стилизация компонентов
+- **Motion** — анимация элементов интерфейса
+- **Lucide React** — иконки
+- **Local Storage** — локальное хранение данных в браузере
 
-## Expanding the ESLint configuration
+## Запуск проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Требования
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js
+- npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Установка
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Клонируйте репозиторий:
 
+```bash
+git clone ССЫЛКА_НА_ВАШ_РЕПОЗИТОРИЙ
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Перейдите в папку проекта:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd todo-list
 ```
+
+Установите зависимости:
+
+```bash
+npm install
+```
+
+Запустите проект в режиме разработки:
+
+```bash
+npm run dev
+```
+
+После запуска откройте адрес, указанный в терминале.
+
+### Сборка проекта
+
+Для создания production-сборки выполните:
+
+```bash
+npm run build
+```
+
+Для локального просмотра production-сборки:
+
+```bash
+npm run preview
+```
+
+## Структура проекта
+
+```text
+src/
+├── components/
+│   ├── FilterTabs/
+│   ├── TaskForm/
+│   ├── TaskItem/
+│   └── TaskList/
+├── types/
+│   └── task.ts
+├── App.tsx
+├── App.module.css
+├── index.css
+└── main.tsx
+```
+
+## Хранение данных
+
+Задачи сохраняются в Local Storage браузера. Благодаря этому список задач и их статусы восстанавливаются после перезагрузки страницы.
+
+Для работы приложения не требуется сервер или регистрация пользователя.
+
+## О проекте
+
+Проект создан в рамках тестового задания на позицию Vibe Coder.
