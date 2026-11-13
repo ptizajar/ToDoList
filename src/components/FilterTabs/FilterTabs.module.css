@@ -1,0 +1,43 @@
+
+.filterTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 4px;
+  background: #f7f7fb;
+  border-radius: 10px;
+}
+
+.filterButton {
+  flex: 1;
+  min-height: 38px;
+  padding: 8px 12px;
+  color: var(--color-muted);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filterButton:hover {
+  color: var(--color-text);
+}
+
+.active {
+  color: var(--color-primary);
+  background: var(--color-white);
+  box-shadow: 0 1px 4px rgb(35 31 65 / 8%);
+}
+
+@media (max-width: 380px) {
+  .filterTabs {
+    gap: 4px;
+  }
+
+  .filterButton {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+}
